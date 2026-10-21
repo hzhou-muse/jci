@@ -1,0 +1,5 @@
+$ jci build https://example.com/job/x/1/
+exit=2
+--- stdout
+--- stderr
+jci: refusing example.com: not the configured Jenkins host (jenkins-pmrs.cels.anl.gov)

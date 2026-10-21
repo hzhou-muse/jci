@@ -1,0 +1,11 @@
+$ jci matrix mpich-warnings#4335 --failed
+exit=1
+--- stdout
+mpich-warnings#4335  UNSTABLE  5/10 cells failed
+  UNSTABLE  noerrorchecking/ch3-sock      5m23s  1/1 tests failed
+  UNSTABLE  noerrorchecking/ch3-tcp       5m15s  1/1 tests failed
+  UNSTABLE  noerrorchecking/ch4-ofi       6m37s  1/1 tests failed
+  UNSTABLE  noerrorchecking/ch4-ofi-ze    6m02s  1/1 tests failed
+  UNSTABLE  noerrorchecking/ch4-ucx       6m28s  1/1 tests failed
+next: jci failures mpich-warnings#4335
+--- stderr

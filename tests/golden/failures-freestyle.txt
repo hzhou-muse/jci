@@ -1,0 +1,17 @@
+$ jci failures mpich-spellchecker#10346
+exit=1
+--- stdout
+mpich-spellchecker#10346  FAILURE: 0 failed tests in the build
+
+  no failed tests reported; first log errors (of 55 lines):
+        20  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/allgather/Makefile.mk
+        23  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/alltoall/Makefile.mk
+        26  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/coll_algorithms.txt
+        28  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/cvars.txt
+        31  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/include/coll_impl.h
+        33  merge-conflict  CONFLICT (modify/delete): src/mpi/coll/include/csel_container.h deleted in HEAD and modified in cb80ef611c (coll: implement BINE collective algorithms for MPICH).  Version cb80ef611c (coll: implement BINE collective algorithms for MPICH) of src/mpi/coll/include/csel_container.h left in tree.
+        35  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/reduce/Makefile.mk
+        37  merge-conflict  CONFLICT (content): Merge conflict in src/mpi/coll/reduce_scatter/Makefile.mk
+    … 6 more matches; see jci log --errors
+next: jci log mpich-spellchecker#10346 --errors
+--- stderr

@@ -1,0 +1,12 @@
+$ jci log mpich-review-ch4-ofi#5654 --grep session_inter -C 2
+exit=1
+--- stdout
+mpich-review-ch4-ofi#5654 cell asan  UNSTABLE  59 lines; grep 'session_inter': 2 matching lines
+(the only failed cell)
+    27  Running tests in ./rma/testlist.dtp [184 tests - 01:27:15]
+    28  Running tests in ./session/testlist [19 tests - 01:43:21]
+    29  Program session_inter exited without No Errors
+    30  Unexpected output in session_inter:
+    31      [mpiexec@pmrs-gpu-240-02] APPLICATION TIMED OUT, TIMEOUT = 270s
+    32      [proxy:0@pmrs-gpu-240-02] HYD_pmcd_pmip_control_cmd_cb (proxy/pmip_cb.c:490): assert (!closed) failed
+--- stderr

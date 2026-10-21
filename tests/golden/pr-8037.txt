@@ -1,0 +1,11 @@
+$ jci pr 8037
+exit=1
+--- stdout
+PR #8037 head f33600d  (5 Jenkins statuses)
+  FAIL  mpich-review-unit-testing#9     FAILURE 40s, 4/4 cells failed
+  FAIL  mpich-warnings#4335             UNSTABLE 7m15s, 5/10 cells failed, 5/10 tests failed
+  FAIL  mpich-spellchecker#10346        FAILURE 17s
+  FAIL  mpich-whitespace-checker#15353  FAILURE 25s
+  PASS  mpich-authorship-check#14958    pruned from Jenkins; GitHub: SUCCESS. Build time 0s  [contribution-checker]
+next: jci failures mpich-review-unit-testing#9
+--- stderr

@@ -1,0 +1,5 @@
+$ jci build pr:8037
+exit=2
+--- stdout
+--- stderr
+jci: pr:8037 names 4 builds; pick one: mpich-review-unit-testing#9, mpich-warnings#4335, mpich-spellchecker#10346, mpich-whitespace-checker#15353

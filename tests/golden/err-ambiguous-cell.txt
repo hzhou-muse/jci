@@ -1,0 +1,5 @@
+$ jci log mpich-review-ch4-ofi#5646
+exit=2
+--- stdout
+--- stderr
+jci: mpich-review-ch4-ofi#5646 has 5 failed cells; add --cell with one of: asan, debug, default, shmem, vci

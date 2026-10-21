@@ -1,0 +1,14 @@
+$ jci failures pr:8037/warnings --lines 5
+exit=1
+--- stdout
+mpich-warnings#4335  UNSTABLE: 1 failed test in 5 of 10 cells
+
+  warnings: compilation  [FAILED]  cells: noerrorchecking/ch3-sock, noerrorchecking/ch3-tcp, noerrorchecking/ch4-ofi, noerrorchecking/ch4-ofi-ze, noerrorchecking/ch4-ucx
+    In directory: /scratch/jenkins-slave/workspace/mpich-warnings/compiler/gnu/jenkins_configure/noerrorchecking/label/ubuntu22.04_review/netmod/ch3-sock
+      CC       src/mpi/coll/reduce_scatter_block/lib_libmpi_la-reduce_scatter_block_intra_recursive_halving.lo
+    src/mpi/coll/reduce_scatter/reduce_scatter_intra_bine.c: In function ‘MPIR_Reduce_scatter_intra_bine’:
+    src/mpi/coll/reduce_scatter/reduce_scatter_intra_bine.c:471:9: warning: variable ‘is_commutative’ set but not used [-Wunused-but-set-variable]
+      471 |     int is_commutative;
+    … 1 more lines; use --lines 6
+next: jci log mpich-warnings#4335 --cell noerrorchecking/ch3-sock --errors
+--- stderr

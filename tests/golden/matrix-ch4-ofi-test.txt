@@ -1,0 +1,11 @@
+$ jci matrix mpich-review-ch4-ofi#5654
+exit=1
+--- stdout
+mpich-review-ch4-ofi#5654  UNSTABLE  1/5 cells failed
+  UNSTABLE  asan       2h18m  1/3216 tests failed
+  SUCCESS   debug     57m08s  3216 tests
+  SUCCESS   default   51m56s  3216 tests
+  SUCCESS   shmem     53m42s  3216 tests
+  SUCCESS   vci       56m48s  3216 tests
+next: jci failures mpich-review-ch4-ofi#5654
+--- stderr

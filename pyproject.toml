@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jci"
+version = "0.1.0"
+description = "Agent-facing, read-only Jenkins CI triage for MPICH"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.scripts]
+jci = "jci.cli:main"
+
+[tool.setuptools]
+packages = ["jci"]

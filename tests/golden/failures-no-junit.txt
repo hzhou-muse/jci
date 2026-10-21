@@ -1,0 +1,10 @@
+$ jci failures mpich-review-unit-testing#9
+exit=1
+--- stdout
+mpich-review-unit-testing#9  FAILURE: 0 failed tests in 4 of 4 cells
+
+  centos32, freebsd64, linux64, osx: no failed tests reported; first log errors (of 30 lines):
+        20  error           ERROR: Step ‘Archive the artifacts’ failed: No artifacts found that match the file pattern "**.xml". Configuration error?
+        22  error           ERROR: Step ‘Publish JUnit test result report’ failed: No test report files were found. Configuration error?
+next: jci log mpich-review-unit-testing#9 --cell centos32 --errors
+--- stderr

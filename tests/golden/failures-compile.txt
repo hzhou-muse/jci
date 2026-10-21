@@ -1,0 +1,17 @@
+$ jci failures mpich-review-ch4-ofi#5646
+exit=1
+--- stdout
+mpich-review-ch4-ofi#5646  FAILURE: 0 failed tests in 5 of 5 cells
+
+  asan, debug, default, shmem, vci: no failed tests reported; first log errors (of 130 lines):
+        29  compile-error   src/mpid/ch4/netmod/ofi/ofi_rndv_read.c:155:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+        38  compile-error   src/mpid/ch4/netmod/ofi/ofi_rndv_read.c:309:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+        57  compile-error   src/mpid/ch4/netmod/ofi/ofi_rndv_write.c:87:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+        79  compile-error   src/mpid/ch4/netmod/ofi/ofi_pipeline.c:73:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+        88  compile-error   src/mpid/ch4/netmod/ofi/ofi_pipeline.c:101:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+        97  compile-error   src/mpid/ch4/netmod/ofi/ofi_pipeline.c:459:5: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+       122  jenkins         Build step 'Run with timeout' marked build as failure
+       124  error           ERROR: Step ‘Publish JUnit test result report’ failed: No test report files were found. Configuration error?
+    … 10 more matches; see jci log --errors
+next: jci log mpich-review-ch4-ofi#5646 --cell asan --errors
+--- stderr

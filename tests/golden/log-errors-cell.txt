@@ -1,0 +1,62 @@
+$ jci log mpich-review-ch4-ofi#5646 --cell default --errors -C 1
+exit=1
+--- stdout
+mpich-review-ch4-ofi#5646 cell default  FAILURE  136 lines; errors: 18 matching lines
+    19  checking size of long long... 8
+    20  ./configure: line 15472: PAC_GET_SPECIAL_SYSTEM_INFO: command not found
+    21  checking for memalign... yes
+--
+    28        |                                                                      ~~~~^~~
+    29  src/mpid/ch4/netmod/ofi/ofi_rndv_read.c:155:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+    30    155 |     mpi_errno = MPIDI_OFI_async_things_add(rndvread_read_poll, rreq, NULL, p->vci_local);
+--
+    37        |                                                                      ~~~~^~~
+    38  src/mpid/ch4/netmod/ofi/ofi_rndv_read.c:309:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+    39    309 |     mpi_errno = MPIDI_OFI_async_things_add(recv_copy_poll, p, NULL, vci);
+--
+    46        |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    47  make[2]: *** [Makefile:35115: src/mpid/ch4/netmod/ofi/lib_libmpi_la-ofi_rndv_read.lo] Error 1
+    48  make[2]: *** Waiting for unfinished jobs....
+    49  src/mpid/ch4/netmod/ofi/ofi_rndv_write.c: In function ‘MPIDI_OFI_rndvwrite_recv_mrs_event’:
+--
+    56        |                                                                      ~~~~^~~
+    57  src/mpid/ch4/netmod/ofi/ofi_rndv_write.c:87:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+    58     87 |     mpi_errno = MPIDI_OFI_async_things_add(rndvwrite_write_poll, sreq, NULL, p->vci_local);
+--
+    65        |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+    66  make[2]: *** [Makefile:35122: src/mpid/ch4/netmod/ofi/lib_libmpi_la-ofi_rndv_write.lo] Error 1
+    67  src/mpid/ch4/netmod/ofi/ofi_pipeline.c: In function ‘MPIDI_OFI_pipeline_send’:
+--
+    74        |                                                                      ~~~~^~~
+    75  src/mpid/ch4/netmod/ofi/ofi_pipeline.c:73:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+    76     73 |     mpi_errno = MPIDI_OFI_async_things_add(pipeline_send_poll, sreq, NULL, p->vci_local);
+--
+    83        |                                                                      ~~~~^~~
+    84  src/mpid/ch4/netmod/ofi/ofi_pipeline.c:101:17: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+    85    101 |     mpi_errno = MPIDI_OFI_async_things_add(pipeline_recv_poll, rreq, NULL, p->vci_local);
+--
+    92        |                                                                      ~~~~^~~
+    93  src/mpid/ch4/netmod/ofi/ofi_pipeline.c:459:5: error: too many arguments to function ‘MPIDI_OFI_async_things_add’
+    94    459 |     MPIDI_OFI_async_things_add(recv_copy_poll, p, NULL, vci);
+--
+   101        |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+   102  make[2]: *** [Makefile:35129: src/mpid/ch4/netmod/ofi/lib_libmpi_la-ofi_pipeline.lo] Error 1
+   103  make[2]: Leaving directory '/scratch/jenkins-slave/workspace/mpich-review-ch4-ofi/jenkins_configure/default/label/ubuntu22.04'
+   104  make[1]: *** [Makefile:47840: all-recursive] Error 1
+   105  make[1]: Leaving directory '/scratch/jenkins-slave/workspace/mpich-review-ch4-ofi/jenkins_configure/default/label/ubuntu22.04'
+   106  make: *** [Makefile:9577: all] Error 2
+   107  + date
+--
+   114  make[2]: Leaving directory '/scratch/jenkins-slave/workspace/mpich-review-ch4-ofi/jenkins_configure/default/label/ubuntu22.04'
+   115  make[1]: *** [Makefile:47840: install-recursive] Error 1
+   116  make[1]: Leaving directory '/scratch/jenkins-slave/workspace/mpich-review-ch4-ofi/jenkins_configure/default/label/ubuntu22.04'
+   117  make: *** [Makefile:47951: install] Error 2
+   118  + date
+--
+   126  + mpichversion
+   127  ./jenkins-scripts/mpich/test-worker.sh: line 374: mpichversion: command not found
+   128  Build step 'Run with timeout' marked build as failure
+   129  Recording test results
+   130  ERROR: Step ‘Publish JUnit test result report’ failed: No test report files were found. Configuration error?
+   131  Archiving artifacts
+--- stderr

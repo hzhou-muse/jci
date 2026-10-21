@@ -1,0 +1,25 @@
+$ jci artifacts mpich-review-ch4-ofi#5654 --cell asan
+exit=1
+--- stdout
+mpich-review-ch4-ofi#5654 cell asan  19 artifacts
+  autogen.log
+  c.txt
+  config.log
+  filtered-make.txt
+  m.txt
+  maint/config.log
+  mi.txt
+  modules/hwloc/config.log
+  modules/json-c/config.log
+  modules/libfabric/config.log
+  src/binding/fortran/config.log
+  src/mpi/datatype/typerep/yaksa/config.log
+  src/mpi/romio/config.log
+  src/mpl/config.log
+  src/pm/hydra/config.log
+  src/pmi/config.log
+  test/mpi/config.log
+  test/mpi/dtpools/config.log
+  test/mpi/summary.junit.xml
+next: jci artifacts mpich-review-ch4-ofi#5654 --cell asan --get autogen.log
+--- stderr

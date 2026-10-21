@@ -1,0 +1,11 @@
+$ jci build mpich-review-ch4-ofi#5654
+exit=1
+--- stdout
+mpich-review-ch4-ofi#5654  UNSTABLE  matrix, 5 cells (1 failed)
+  url:      https://jenkins-pmrs.cels.anl.gov/job/mpich-review-ch4-ofi/5654/
+  started:  2026-10-16 22:31 UTC   duration: 2h18m
+  cause:    Started by user Hui Zhou
+  param:    GIT_COMMIT_SHA=5059e4ded1c68d6581f9a3e62d196ea33de77be4
+  tests:    1 failed / 16080
+next: jci matrix mpich-review-ch4-ofi#5654 --failed
+--- stderr

@@ -1,0 +1,31 @@
+$ jci failures mpich-review-ch4-ofi#5654 --json
+exit=1
+--- stdout
+{
+ "schema": "jci/1",
+ "command": "failures",
+ "build": "mpich-review-ch4-ofi#5654",
+ "result": "UNSTABLE",
+ "tests": [
+  {
+   "class": "session",
+   "test": "session/session_inter 5  ",
+   "cells": [
+    "asan"
+   ],
+   "status": "FAILED",
+   "runtests": true,
+   "lines": [
+    "[mpiexec@pmrs-gpu-240-02] APPLICATION TIMED OUT, TIMEOUT = 270s",
+    "[proxy:0@pmrs-gpu-240-02] HYD_pmcd_pmip_control_cmd_cb (proxy/pmip_cb.c:490): assert (!closed) failed",
+    "[proxy:0@pmrs-gpu-240-02] HYDT_dmxu_poll_wait_for_event (lib/tools/demux/demux_poll.c:76): callback returned error status",
+    "[proxy:0@pmrs-gpu-240-02] main (proxy/pmip.c:123): demux engine error waiting for event",
+    "  uptime:",
+    " 19:33:35 up 150 days, 10:38,  1 user,  load average: 5.22, 4.45, 3.64"
+   ],
+   "more_lines": 0
+  }
+ ],
+ "log_errors": []
+}
+--- stderr
